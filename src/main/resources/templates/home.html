@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Common head -->
+    <div th:replace="/fragments/template_basic :: head-basic"></div>
+
+    <!-- Customize css -->
+    <link type="text/css" rel="stylesheet" href="/styles/css/customize__navbar.css">
+    <link type="text/css" rel="stylesheet" href="/styles/css/customize__home.css">
+
+</head>
+<body>
+
+    <!-- Nav header -->
+    <header th:replace="/fragments/navbar :: navbar_header( active = 'home' )"></header>
+
+    <main>
+        <!-- Hero section -->
+        <section class="py-5 px-2 w-100 h-50 d-flex flex-column justify-content-center
+                        align-items-center gap-4 text-center text-white c_bg-hero ">
+            <h1 th:text="${titleHero}" class="h1"></h1>
+            <p class="h6">Todos los trailers a un solo click <br>
+                Entérate de los últimos filmes antes que nadie</p>
+            <a href="/app/trailers" class="btn btn-cta btn-lg rounded">Ver trailers</a>
+        </section>
+
+        <!-- Register cta -->
+        <section class="container my-5 text-light">
+            <div class="row">
+                <div class="col-12 col-lg-9 text-center text-lg-start">
+                    <h2>¿Ya tienes una cuenta?</h2>
+                    <p class="my-5">Con una cuenta podrás tener una experiencia más personalizada, listar tus trailers preferidos y ¡mucho más!</p>
+                    <a href="/account/signin" class="btn btn-cta">Registrarse</a>
+                </div>
+                <div class="col-12 col-lg-3 d-flex">
+                    <img src="/resources/img/popcorn.png" alt="Popcorn con una cinta de video" class="h-100 mx-auto">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <div th:replace="/fragments/footer :: basic_footer"></div>
+
+    <!-- Bootstrap JS -->
+    <div th:replace="/fragments/template_basic :: bootstrap_script-basic"></div>
+
+</body>
+</html>
